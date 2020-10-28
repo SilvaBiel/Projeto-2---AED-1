@@ -12,19 +12,19 @@ class MainClass {
 
     //instanciando o cliente
     Cliente cliente = new Cliente();
-    Console.WriteLine("Digite o seu nome, por favor e a senha");
+    Console.WriteLine("Digite o seu nome e a senha");
     MudaNome = Console.ReadLine();
     password = int.Parse(Console.ReadLine());
     cliente.MudaNome(MudaNome, password);
-    Console.WriteLine("Digite o seu endereço, por favor");
+    Console.WriteLine("Digite o seu endereço, por favor \n Rua e numero da residencia");
     endereço = Console.ReadLine();
     cliente.MudaEndereco(endereço, password);
     Console.WriteLine("Digite o seu telefone, por favor");
     telefone = double.Parse(Console.ReadLine());
     cliente.MudaTelefone(telefone, password);
 
-    for(int i=0; estoque.Produtos.Count;i++){
-      Console.WriteLine("Produto{0}, Valor{1}, Quantidade em estoque{2}", estoque.Produtos[i], estoque.Preco[i], estoque.Quantidade[i]);
+    for(int i=0; i<estoque.Produtos.Count;i++){
+      Console.WriteLine("{0} - ID {3}\n R${1}\n Disponibilidade {2}\n\n", estoque.Produtos[i], estoque.Preco[i], estoque.Quantidade[i], i);
     }
 
 
@@ -37,11 +37,18 @@ class MainClass {
   //instanciação do obj carrinho
   Carrinho CarrinhoCliente = new Carrinho();
   while (continuar == "S"){
-    Console.WriteLine("Digite a posição do produto na tabela de produtos, inicia-se por zero");
+    Console.WriteLine("Digite o ID do produto na tabela de produtos");
     PosProduto = int.Parse(Console.ReadLine());
     Console.WriteLine("Digite a quantidade");
     qtd = int.Parse(Console.ReadLine());
-    CarrinhoCliente.CompraProduto(ListaDeProdutos[PosProduto], PrecoProdutos[PosProduto], qtd);
+      while (qtd > estoque.Quantidade[PosProduto]){
+        if(qtd > estoque.Quantidade[PosProduto] || qtd == 0){
+          Console.WriteLine("Quantidade invalida");
+        }else{
+          break;
+        }
+      }
+    CarrinhoCliente.CompraProduto(estoque.Produtos[PosProduto], estoque.Valor[PosProduto], qtd);
     Console.WriteLine("\nPara continuar fazendo compras digite S, para sair digite N");
     continuar = Console.ReadLine();
   }
