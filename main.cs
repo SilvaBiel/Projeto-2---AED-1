@@ -39,10 +39,14 @@ class MainClass {
           Console.WriteLine("Quantidade invalida");
           Console.WriteLine("Digite a quantidade");
           qtd = int.Parse(Console.ReadLine());
+          if (estoque.Quantidade[PosProduto]==0){
+            Console.WriteLine("Produto Indisponivel");
+          }
         }else{
           break;
         }
       }
+      estoque.Quantidade[PosProduto]=estoque.Quantidade[PosProduto]-qtd;
     CarrinhoCliente.CompraProduto(estoque.Produtos[PosProduto], estoque.Preco[PosProduto], qtd);
     Console.WriteLine("\nPara continuar fazendo compras digite S, para sair digite N");
     continuar = Console.ReadLine();
