@@ -9,11 +9,11 @@ class Carrinho{
 //Lista os produtos no carrinho
   public void CompraProduto (string Produto, double valor, int qtd){
     Console.Write("Produtos escolhidos -> {0} {1}", qtd, Produto);
-    for (int i = 0; i<qtd; i++){
-      ProdutosCarrinho = new string[15];
-      ProdutosCarrinho[i]=Produto;
-      //Console.Write(ProdutosCarrinho[i],",");
-    }
+    // for (int i = 0; i<qtd; i++){
+    //   ProdutosCarrinho = new string[15];
+    //   ProdutosCarrinho[i]=Produto;
+    //   //Console.Write(ProdutosCarrinho[i],",");
+    // }
     ValorTotalDoCarrinho = (valor*qtd)+ValorTotalDoCarrinho;
     }
 

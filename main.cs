@@ -26,13 +26,6 @@ class MainClass {
     for(int i=0; i<estoque.Produtos.Count;i++){
       Console.WriteLine("{0} - ID {3}\n R${1}\n Disponibilidade {2}\n\n", estoque.Produtos[i], estoque.Preco[i], estoque.Quantidade[i], i);
     }
-
-
-    ListaDeProdutos = new string[] { "arroz", "feijao", "carne" };
-    PrecoProdutos = new double[] { 20,7,25 };
-      for (int i=0;i<3;i++){
-      Console.WriteLine("Produto {0} - Preço {1}",ListaDeProdutos[i],PrecoProdutos[i]);
-      }
       
   //instanciação do obj carrinho
   Carrinho CarrinhoCliente = new Carrinho();
@@ -44,11 +37,13 @@ class MainClass {
       while (qtd > estoque.Quantidade[PosProduto]){
         if(qtd > estoque.Quantidade[PosProduto] || qtd == 0){
           Console.WriteLine("Quantidade invalida");
+          Console.WriteLine("Digite a quantidade");
+          qtd = int.Parse(Console.ReadLine());
         }else{
           break;
         }
       }
-    CarrinhoCliente.CompraProduto(estoque.Produtos[PosProduto], estoque.Valor[PosProduto], qtd);
+    CarrinhoCliente.CompraProduto(estoque.Produtos[PosProduto], estoque.Preco[PosProduto], qtd);
     Console.WriteLine("\nPara continuar fazendo compras digite S, para sair digite N");
     continuar = Console.ReadLine();
   }
@@ -57,8 +52,6 @@ class MainClass {
   if (CheckTotal == "S"){
      Console.WriteLine(CarrinhoCliente.CarrinhoTotal());
   }
-  // para calcular o valor de algum produto
-  Carrinho.ProdutoPreco(20,4);
     
     }
 
