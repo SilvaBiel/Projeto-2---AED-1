@@ -35,7 +35,7 @@ class MainClass {
     qtd = int.Parse(Console.ReadLine());
       while (qtd > estoque.Quantidade[PosProduto]){
         if(qtd > estoque.Quantidade[PosProduto] || qtd == 0){
-          Console.WriteLine("Quantidade invalida");
+          Console.WriteLine("Quantidade invalida\n. Quantidade disponivel em estoque {0}", estoque.Quantidade[PosProduto]);
           Console.Write("Digite a quantidade >> ");
           qtd = int.Parse(Console.ReadLine());
           if (estoque.Quantidade[PosProduto]==0){
@@ -68,9 +68,9 @@ class MainClass {
     Pagamento PagamentoCliente = new Pagamento();
     
     opPag = PagamentoCliente.Pagar();
-
-    while (opPag == 1){
+    if (opPag == 1){
       Console.WriteLine ("OK! Dinheiro, né?! ");
+    while (opPag == 1){
       //Cliente entrega o valor
       // Console.Write("Vai precisar de troco? (S ou N) >>> ");
       // char opTroco = char.Parse(Console.ReadLine()); 
@@ -90,6 +90,7 @@ class MainClass {
       //   break;
       // }
     }
+  }
     if (opPag == 2){
       Console.WriteLine("Só escolher uma das chaves abaixo:");
       Console.Write("Chave aleatória: "); 
