@@ -16,6 +16,7 @@ class Cliente{
     }  
     else{
       Console.WriteLine("Acesso Negado");
+      System.Environment.Exit(0);
     }
   }
   public void MudaEndereco(string n, int senha){
