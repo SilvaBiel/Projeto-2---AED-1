@@ -31,7 +31,6 @@ class MainClass {
   while (continuar == "S" ^ continuar == "s"){
     Console.Write("Digite o ID do produto na tabela de produtos >> ");
     PosProduto = int.Parse(Console.ReadLine());
-    Console.WriteLine(estoque.Produtos.Count);
     while(PosProduto >= estoque.Produtos.Count){
       Console.Write("ID invalido.\n Digite o ID do produto na tabela de produtos >> ");
       PosProduto = int.Parse(Console.ReadLine());
