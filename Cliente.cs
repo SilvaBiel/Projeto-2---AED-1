@@ -15,7 +15,7 @@ class Cliente{
        Nome = n;
     }  
     else{
-      Console.WriteLine("Acesso Negado");
+      Console.WriteLine("Acesso Negado!");
       System.Environment.Exit(0);
     }
   }
@@ -25,7 +25,7 @@ class Cliente{
        Endereco = n;
     }  
     else{
-      Console.WriteLine("Acesso Negado");
+      Console.WriteLine("Acesso Negado!");
     }
   }
   public void MudaTelefone(double c, int senha){
@@ -34,7 +34,7 @@ class Cliente{
        Telefone = c;
     }  
     else{
-      Console.WriteLine("Valor Inválido");
+      Console.WriteLine("Valor Inválido!");
     }
   }
 //GET

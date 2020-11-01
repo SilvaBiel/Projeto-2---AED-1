@@ -15,11 +15,12 @@ class MainClass {
     Console.Write("Digite a senha >> ");
     password = int.Parse(Console.ReadLine());
     cliente.MudaNome(MudaNome, password);
-    Console.Write("Digite o seu endereço, por favor \nRua e numero da residencia >> ");
+    Console.Write("Digite o seu endereço, por favor \nRua e número da residência >> ");
     endereço = Console.ReadLine();
     cliente.MudaEndereco(endereço, password);
     Console.Write("Digite o seu telefone, por favor >> ");
     telefone = double.Parse(Console.ReadLine());
+    Console.Clear();
     cliente.MudaTelefone(telefone, password);
 
     for(int i=0; i<estoque.Produtos.Count;i++){
@@ -32,7 +33,7 @@ class MainClass {
     Console.Write("Digite o ID do produto na tabela de produtos >> ");
     PosProduto = int.Parse(Console.ReadLine());
     while(PosProduto >= estoque.Produtos.Count){
-      Console.Write("ID invalido.\n Digite o ID do produto na tabela de produtos >> ");
+      Console.Write("ID inválido.\n Digite o ID do produto na tabela de produtos >> ");
       PosProduto = int.Parse(Console.ReadLine());
       if(PosProduto <= estoque.Produtos.Count){
         break;
@@ -42,11 +43,11 @@ class MainClass {
     qtd = int.Parse(Console.ReadLine());
       while (qtd > estoque.Quantidade[PosProduto]){
         if(qtd > estoque.Quantidade[PosProduto] || qtd == 0){
-          Console.WriteLine("Quantidade invalida.\nQuantidade disponivel em estoque {0}",estoque.Quantidade[PosProduto]);
+          Console.WriteLine("Quantidade inválida.\nQuantidade disponível em estoque {0}",estoque.Quantidade[PosProduto]);
           Console.Write("Digite a quantidade >> ");
           qtd = int.Parse(Console.ReadLine());
           if (estoque.Quantidade[PosProduto]==0){
-            Console.WriteLine("Produto Indisponivel");
+            Console.WriteLine("Produto Indisponível! ");
           }
         }else{
           break;
@@ -57,6 +58,7 @@ class MainClass {
     Console.WriteLine("\n-------------------------------------------------------------------------");
     Console.Write("\nPara continuar fazendo compras digite S, para sair digite N >> ");
     continuar = Console.ReadLine();
+    
   }
 
   double totalCar = CarrinhoCliente.CarrinhoTotal();
@@ -67,7 +69,7 @@ class MainClass {
   Console.Write("Irá finalizar a compra? (s ou n) >> ");
   
   string finalCompra= Console.ReadLine();
-  
+  Console.Clear();
   if (finalCompra == "S" ^ finalCompra == "s"){
     //Instanciando Pagamento
     Pagamento PagamentoCliente = new Pagamento();
@@ -90,9 +92,10 @@ class MainClass {
   }
     if (opPag == 2){
       Console.WriteLine("Só escolher uma das chaves abaixo:");
+      Console.WriteLine("");
       Console.Write("Chave aleatória: "); 
       Console.WriteLine(PagamentoCliente.GerarChaveAleat());
-      Console.WriteLine("Telefone: 279999988888 \nE-mail: comerciocapixaba@gmail.com \nCPF: 193.839.850-54\n ");
+      Console.WriteLine("Telefone: 279999988888 \nE-mail: comerciocapixaba@ccapixaba.com \nCPF: 193.839.850-54\n ");
       Console.WriteLine("Obrigado! Tenha um ótimo dia!");
     }
   }
@@ -101,10 +104,7 @@ class MainClass {
   }
 
 
-  Console.WriteLine("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-  Console.WriteLine("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
-  totalCar = CarrinhoCliente.CarrinhoTotal();
-  Console.Write(totalCar);
+  
   }
 
 }

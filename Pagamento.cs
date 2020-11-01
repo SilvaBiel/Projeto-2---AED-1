@@ -5,8 +5,6 @@ class Pagamento{
   private int tipo;
 
 
-
-
   public int Pagar(){
     Console.WriteLine("Qual será a forma de pagamento, sr(a)?");
     Console.Write("1 - dinheiro, 2 - PIX >>> ");
@@ -16,9 +14,9 @@ class Pagamento{
     return tipo;
     }
 
-  //class GerarChaveAleat {
+  //class GerarChaveAleatPIX {
   public string GerarChaveAleat() {
-  // Gera uma senha com 6 caracteres entre numeros e letras
+  // Gera uma senha com 6 caracteres entre números e letras
   string chars = "abcdefghjkmnpqrstuvwxyz023456789";
   string pass = "";
   Random random = new Random();
@@ -27,9 +25,5 @@ class Pagamento{
   }
   string chaveA = pass;
   return chaveA;
-}
-//}
-
-
-  
+  }  
 }
