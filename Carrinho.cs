@@ -30,14 +30,14 @@ class Carrinho{
   
   public double CarrinhoTotal (){
     
-    Console.WriteLine("Estes são os itens, quantidades e preço que estão no carrinho:\n ");
+    Console.WriteLine("Estes são os itens, quantidades e preço dos produtos adquiridos:\n ");
     for(int i=0; i<ProdutoCliente.Count;i++){
       ValorPorProduto = QuantidadeProdutoCliente[i]*PrecoProdutoCliente[i];
       Console.WriteLine("{0} - {1} - R$ {2} - Total p/ produto R$ {3}", QuantidadeProdutoCliente[i],ProdutoCliente[i],PrecoProdutoCliente[i], ValorPorProduto);
       
     }
     
-    Console.Write("\nSenhor(a), este é o total do carrinho -> " );
+    Console.Write("\nE este é o total do carrinho ->R$ " );
     return ValorTotalDoCarrinho;
   }
 

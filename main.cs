@@ -71,18 +71,19 @@ class MainClass {
   string finalCompra= Console.ReadLine();
   Console.Clear();
   if (finalCompra == "S" ^ finalCompra == "s"){
+    Console.WriteLine ("O valor total a ser pago é R${0}", totalCar);
     //Instanciando Pagamento
     Pagamento PagamentoCliente = new Pagamento();
     
     opPag = PagamentoCliente.Pagar();
     if (opPag == 1){
-      Console.WriteLine ("OK! Dinheiro, né?! ");
+      Console.WriteLine ("OK! Dinheiro, né?!");
       while (opPag == 1){
         //Cliente entrega o valor
-        Console.Write("Valor entregue >> ");
+        Console.Write("Valor entregue >>R$ ");
         double valorEntregue = double.Parse(Console.ReadLine());
         if(valorEntregue < totalCar){
-          Console.WriteLine("Senhor, o valor é insuficiente, o total do seu carrinho é {0}", totalCar);
+          Console.WriteLine("Senhor, o valor é insuficiente, o total do seu carrinho é R${0}", totalCar);
         }else{
           Console.WriteLine("O seu troco é de R$ {0} ",valorEntregue - totalCar);
           Console.WriteLine("Tenha um ótimo dia!!");
@@ -99,12 +100,13 @@ class MainClass {
       Console.WriteLine("Obrigado! Tenha um ótimo dia!");
     }
   }
-  else{
-    Console.WriteLine(".");
-  }
-
-
-  
+    else{
+      Console.WriteLine(".");
+    }
+  Console.WriteLine("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+  Console.WriteLine("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+  totalCar = CarrinhoCliente.CarrinhoTotal();
+  Console.Write(totalCar);
   }
 
 }
