@@ -104,7 +104,6 @@ class MainClass {
       Console.WriteLine(".");
     }
   Console.WriteLine("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-  Console.WriteLine("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
   totalCar = CarrinhoCliente.CarrinhoTotal();
   Console.Write(totalCar);
   }
